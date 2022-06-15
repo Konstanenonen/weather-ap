@@ -1,7 +1,14 @@
+/* eslint-disable import/extensions */
 import "./style.css";
+import weather from "./modules/weather";
 
-console.log("Hello, World!!");
-
-const one: number = 1;
-
-console.log(one);
+let weatherData;
+weather
+  .getWeather("Timbuktu")
+  .then((result) => {
+    weatherData = result;
+    console.log(weatherData);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
