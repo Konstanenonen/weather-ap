@@ -1,14 +1,20 @@
 /* eslint-disable consistent-return */
 const Weather = (() => {
   const filterResult = (data: {
-    clouds: object;
+    clouds: { all: number };
     main: object;
     name: string;
-    weather: object;
+    weather: object[];
     wind: object;
   }) => {
     const { clouds, main, name, weather, wind } = data;
-    return { clouds, main, name, weather, wind };
+    return {
+      clouds: clouds.all,
+      main,
+      name,
+      weather: weather[0],
+      wind,
+    };
   };
 
   const getWeather = async (location: string) => {
