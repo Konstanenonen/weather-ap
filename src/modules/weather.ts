@@ -1,5 +1,5 @@
 /* eslint-disable consistent-return */
-const weatherModule = (() => {
+const Weather = (() => {
   const filterResult = (data: {
     clouds: object;
     main: object;
@@ -14,7 +14,7 @@ const weatherModule = (() => {
   const getWeather = async (location: string) => {
     try {
       const result = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9`
+        `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&units=metric`
       );
       const data = await result.json();
       return filterResult(data);
@@ -26,4 +26,4 @@ const weatherModule = (() => {
   return { getWeather };
 })();
 
-export default weatherModule;
+export default Weather;
