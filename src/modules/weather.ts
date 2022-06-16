@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 const Weather = (() => {
   const filterResult = (data: {
     clouds: { all: number };
@@ -55,6 +54,7 @@ const Weather = (() => {
       return filterResult(data);
     } catch (error) {
       console.log(`Error in the getWeather function: ${error}`);
+      return error;
     }
   };
 

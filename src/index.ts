@@ -23,6 +23,8 @@ locationForm.addEventListener("submit", async (event) => {
     const imageUrl = await ImageSearch.getPictureUrl(weatherData.weather);
     weatherImage.src = imageUrl;
     weatherImage.classList.remove("hidden");
+
+    countryField.value = "";
   } catch (error) {
     weatherSection.innerText = "Didn't find that location :(";
     console.log(`Error in the event listener: ${error}`);
