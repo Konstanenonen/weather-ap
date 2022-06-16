@@ -52,14 +52,13 @@ const Weather = (() => {
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&units=metric`
       );
       const data = await result.json();
-      const filteredData = filterResult(data);
-      return render(filteredData);
+      return filterResult(data);
     } catch (error) {
       console.log(`Error in fetch chain ${error}`);
     }
   };
 
-  return { getWeather };
+  return { getWeather, render };
 })();
 
 export default Weather;
