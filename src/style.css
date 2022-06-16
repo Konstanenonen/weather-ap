@@ -151,6 +151,10 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .top-section {
   padding: 20px;
   display: flex;
