@@ -12,5 +12,8 @@ document
     ) as HTMLInputElement;
     const location: string = countryField.value;
     const weatherData = await Weather.getWeather(location);
-    console.log(weatherData);
+    const weatherSection = document.querySelector(
+      ".weather-information"
+    ) as HTMLDivElement;
+    weatherSection.innerHTML = weatherData;
   });
