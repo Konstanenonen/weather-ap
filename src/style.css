@@ -170,12 +170,13 @@ body {
 .location-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
 .search-btn {
   background-color: rgb(91, 144, 222);
-  border: 1px solid black;
+  border: none;
   border-radius: 3px;
   color: white;
   font-weight: bold;
