@@ -10,10 +10,12 @@ document
     const countryField = document.querySelector(
       "#country-field"
     ) as HTMLInputElement;
-    const location: string = countryField.value;
-    const weatherData = await Weather.getWeather(location);
     const weatherSection = document.querySelector(
       ".weather-information"
     ) as HTMLDivElement;
+
+    weatherSection.innerText = "Loading...";
+    const location: string = countryField.value;
+    const weatherData = await Weather.getWeather(location);
     weatherSection.innerHTML = weatherData;
   });
