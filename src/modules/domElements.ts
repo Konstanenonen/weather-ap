@@ -10,4 +10,6 @@ const weatherSection = document.querySelector(
   ".weather-information"
 ) as HTMLDivElement;
 
-export { locationForm, countryField, weatherSection };
+const weatherImage = document.querySelector(".weather-img") as HTMLImageElement;
+
+export { locationForm, countryField, weatherSection, weatherImage };

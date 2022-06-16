@@ -174,6 +174,13 @@ body {
   gap: 10px;
 }
 
+.country-field {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
 .search-btn {
   background-color: rgb(91, 144, 222);
   border: none;
@@ -210,4 +217,10 @@ body {
   font-size: 1.4rem;
   margin-bottom: 20px;
   align-self: center;
+}
+
+.weather-img {
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
 }

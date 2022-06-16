@@ -54,7 +54,7 @@ const Weather = (() => {
       const data = await result.json();
       return filterResult(data);
     } catch (error) {
-      console.log(`Error in fetch chain ${error}`);
+      console.log(`Error in the getWeather function: ${error}`);
     }
   };
 
