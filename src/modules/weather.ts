@@ -8,7 +8,7 @@ const Weather = (() => {
       humidity: number;
     };
     name: string;
-    weather: { description: string }[];
+    weather: { description: string; main: string }[];
     wind: { speed: string; deg: string };
   }) => {
     const { clouds, main, name, weather, wind } = data;
@@ -20,6 +20,7 @@ const Weather = (() => {
       humidity: main.humidity,
       name,
       weather: weather[0].description,
+      main: weather[0].main,
       windSpeed: wind.speed,
       windDeg: wind.deg,
     };
@@ -33,6 +34,7 @@ const Weather = (() => {
     humidity: number;
     name: string;
     weather: string;
+    main: string;
     windSpeed: string;
     windDeg: string;
   }) =>

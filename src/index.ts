@@ -20,7 +20,7 @@ locationForm.addEventListener("submit", async (event) => {
     const weatherData = await Weather.getWeather(location);
     weatherSection.innerHTML = Weather.render(weatherData);
 
-    const imageUrl = await ImageSearch.getPictureUrl(weatherData.weather);
+    const imageUrl = await ImageSearch.getPictureUrl(weatherData.main);
     weatherImage.src = imageUrl;
     weatherImage.classList.remove("hidden");
 
