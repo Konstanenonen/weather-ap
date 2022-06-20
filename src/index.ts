@@ -6,6 +6,7 @@ import {
   countryField,
   weatherSection,
   weatherImage,
+  unitRadioButtons,
 } from "./modules/domElements";
 import "./style.css";
 
@@ -17,10 +18,15 @@ locationForm.addEventListener("submit", async (event) => {
     weatherSection.innerText = "Loading...";
     const location: string = countryField.value;
 
-    const weatherData = await Weather.getWeather(location);
+    const selectedUnit = unitRadioButtons.find((input) => input.checked).value;
+
+    const weatherData =
+      selectedUnit === "celsius"
+        ? await Weather.getWeatherCelsius(location)
+        : await Weather.getWeatherFarenheit(location);
     weatherSection.innerHTML = Weather.render(weatherData);
 
-    const imageUrl = await ImageSearch.getPictureUrl(weatherData.main);
+    const imageUrl: string = await ImageSearch.getPictureUrl(weatherData.main);
     weatherImage.src = imageUrl;
     weatherImage.classList.remove("hidden");
 

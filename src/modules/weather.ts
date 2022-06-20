@@ -47,7 +47,7 @@ const Weather = (() => {
     <p class="weather-item">Wind speed: ${data.windSpeed}</p>
     <p class="weather-item">Wind direction: ${data.windDeg}</p>`;
 
-  const getWeather = async (location: string) => {
+  const getWeatherCelsius = async (location: string) => {
     const result = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&units=metric`
     );
@@ -55,7 +55,15 @@ const Weather = (() => {
     return filterResult(data);
   };
 
-  return { getWeather, render };
+  const getWeatherFarenheit = async (location: string) => {
+    const result = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9`
+    );
+    const data = await result.json();
+    return filterResult(data);
+  };
+
+  return { getWeatherCelsius, render, getWeatherFarenheit };
 })();
 
 export default Weather;

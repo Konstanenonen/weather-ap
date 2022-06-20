@@ -10,6 +10,23 @@
     <div class="top-section">
       <h1 class="app-name">Weather App</h1>
       <form class="location-form">
+        <fieldset>
+          <legend>Select unit</legend>
+          <div>
+            <input
+              type="radio"
+              id="celsius"
+              name="units"
+              value="celsius"
+              checked
+            />
+            <label for="celsius">Celsius</label>
+          </div>
+          <div>
+            <input type="radio" id="farenheit" name="units" value="farenheit" />
+            <label for="farenheit">Farenheit</label>
+          </div>
+        </fieldset>
         <label for="country-field">Search for a location</label>
         <div class="search-section">
           <input type="text" id="country-field" class="country-field" />

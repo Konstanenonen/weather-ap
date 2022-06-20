@@ -12,4 +12,14 @@ const weatherSection = document.querySelector(
 
 const weatherImage = document.querySelector(".weather-img") as HTMLImageElement;
 
-export { locationForm, countryField, weatherSection, weatherImage };
+const unitRadioButtons = Array.from(
+  document.querySelectorAll("input[type='radio']")
+) as HTMLInputElement[];
+
+export {
+  locationForm,
+  countryField,
+  weatherSection,
+  weatherImage,
+  unitRadioButtons,
+};
