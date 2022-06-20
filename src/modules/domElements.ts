@@ -16,10 +16,13 @@ const unitRadioButtons = Array.from(
   document.querySelectorAll("input[type='radio']")
 ) as HTMLInputElement[];
 
+const errorSpan = document.querySelector(".error-message") as HTMLSpanElement;
+
 export {
   locationForm,
   countryField,
   weatherSection,
   weatherImage,
   unitRadioButtons,
+  errorSpan,
 };

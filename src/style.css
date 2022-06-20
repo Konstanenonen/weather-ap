@@ -195,6 +195,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
@@ -260,4 +261,9 @@ body {
 
 legend {
   margin-bottom: 5px;
+}
+
+.error-message {
+  color: rgb(253, 230, 230);
+  text-align: center;
 }
