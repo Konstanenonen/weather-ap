@@ -36,7 +36,8 @@ locationForm.addEventListener("submit", async (event) => {
       selectedUnit === "celsius"
         ? await Weather.getWeatherCelsius(location)
         : await Weather.getWeatherFarenheit(location);
-    weatherSection.innerHTML = Weather.render(weatherData);
+    const weatherUnit = selectedUnit === "celsius" ? "°C" : "°F";
+    weatherSection.innerHTML = Weather.render(weatherData, weatherUnit);
 
     const imageUrl: string = await ImageSearch.getPictureUrl(weatherData.main);
     weatherImage.src = imageUrl;

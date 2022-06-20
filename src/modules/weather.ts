@@ -26,24 +26,27 @@ const Weather = (() => {
     };
   };
 
-  const render = (data: {
-    clouds: number;
-    temp: number;
-    feelsLike: number;
-    pressure: number;
-    humidity: number;
-    name: string;
-    weather: string;
-    main: string;
-    windSpeed: string;
-    windDeg: string;
-  }) =>
+  const render = (
+    data: {
+      clouds: number;
+      temp: number;
+      feelsLike: number;
+      pressure: number;
+      humidity: number;
+      name: string;
+      weather: string;
+      main: string;
+      windSpeed: string;
+      windDeg: string;
+    },
+    unit: "°F" | "°C"
+  ) =>
     `<h2 class="location-name">${data.name}</h2>
     <h3 class="weather-description">${data.weather}</h3>
-    <p class="weather-item">Temperature: ${data.temp}</p>
-    <p class="weather-item">Feels like: ${data.feelsLike}</p>
+    <h3 class="weather-description">${data.temp} ${unit}</h3>
+    <p class="weather-item">Feels like: ${data.feelsLike} ${unit}</p>
     <p class="weather-item">Pressure: ${data.pressure}</p>
-    <p class="weather-item">Humidity: ${data.humidity}</p>
+    <p class="weather-item">Humidity: ${data.humidity} %</p>
     <p class="weather-item">Wind speed: ${data.windSpeed}</p>
     <p class="weather-item">Wind direction: ${data.windDeg}</p>`;
 
