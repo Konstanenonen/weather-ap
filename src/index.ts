@@ -23,13 +23,13 @@ locationForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!countryField.validity.valid) {
     showFormError();
+    return;
   }
 
   try {
     weatherSection.classList.remove("hidden");
-    weatherSection.innerHTML = "<p class='weather-item'>Loading...</p>";
+    weatherSection.innerHTML = "<h2 class='location-name'>Loading...</h2>";
     const location: string = countryField.value;
-
     const selectedUnit = unitRadioButtons.find((input) => input.checked).value;
 
     const weatherData =
@@ -45,7 +45,7 @@ locationForm.addEventListener("submit", async (event) => {
     countryField.value = "";
   } catch (error) {
     weatherSection.innerHTML =
-      "<p class='weather-item'>Didn't find that location :(</p>";
+      "<h2 class='location-name'>Didn't find that location :(</h2>";
     console.log(`Error in the event listener: ${error}`);
   }
 });
