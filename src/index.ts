@@ -11,20 +11,23 @@ import {
 } from "./modules/domElements";
 import "./style.css";
 
+function showFormError() {
+  if (countryField.value === "") {
+    errorSpan.innerText = "Enter the location";
+  } else {
+    errorSpan.innerText = "Location must be at least 3 characters long";
+  }
+}
+
 locationForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (!countryField.validity.valid) {
-    if (countryField.value === "") {
-      errorSpan.innerText = "Enter the location";
-    } else {
-      errorSpan.innerText = "Location must be at least 3 characters long";
-    }
-    return;
+    showFormError();
   }
 
   try {
     weatherSection.classList.remove("hidden");
-    weatherSection.innerText = "Loading...";
+    weatherSection.innerHTML = "<p class='weather-item'>Loading...</p>";
     const location: string = countryField.value;
 
     const selectedUnit = unitRadioButtons.find((input) => input.checked).value;
@@ -53,9 +56,5 @@ countryField.addEventListener("input", () => {
 });
 
 countryField.addEventListener("invalid", () => {
-  if (countryField.value === "") {
-    errorSpan.innerText = "Enter the location";
-  } else {
-    errorSpan.innerText = "Location must be at least 3 characters long";
-  }
+  showFormError();
 });
