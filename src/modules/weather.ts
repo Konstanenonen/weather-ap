@@ -43,12 +43,19 @@ const Weather = (() => {
   ) =>
     `<h2 class="location-name">${data.name}</h2>
     <h3 class="weather-description">${data.weather}</h3>
-    <h3 class="weather-description">${data.temp} ${unit}</h3>
-    <p class="weather-item">Feels like: ${data.feelsLike} ${unit}</p>
-    <p class="weather-item">Pressure: ${data.pressure}</p>
-    <p class="weather-item">Humidity: ${data.humidity} %</p>
-    <p class="weather-item">Wind speed: ${data.windSpeed}</p>
-    <p class="weather-item">Wind direction: ${data.windDeg}</p>`;
+    <div class="flex-pair">
+      <div class="pair-item">
+        <div class="temperature-container">
+        <p class="weather-temperature">${data.temp}</p>
+        <p class="weather-unit">${unit}</p>
+        </div>
+      </div>
+      <div class="pair-item">
+        <p>Feels like: ${data.feelsLike} ${unit}</p>
+        <p>Pressure: ${data.pressure}</p>
+        <p>Humidity: ${data.humidity} %</p>
+      </div>
+    </div>`;
 
   const getWeatherCelsius = async (location: string) => {
     const result = await fetch(

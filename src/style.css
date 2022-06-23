@@ -199,22 +199,18 @@ body {
   gap: 10px;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  width: 300px;
+  width: 400px;
   height: 300px;
 }
 
-.weather-item {
-  margin-left: 60px;
-}
-
 .location-name {
-  font-size: 1.8rem;
+  font-size: 3.5rem;
   align-self: center;
 }
 
 .weather-description {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 30px;
   align-self: center;
 }
 
@@ -266,4 +262,31 @@ legend {
 .error-message {
   color: rgb(253, 230, 230);
   text-align: center;
+}
+
+.flex-pair {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+}
+
+.pair-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.weather-temperature {
+  font-size: 4rem;
+}
+
+.temperature-container {
+  display: flex;
+}
+
+.weather-unit {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
