@@ -26,6 +26,18 @@ const Weather = (() => {
     };
   };
 
+  const weatherGetterFactory = (unit: string) => async (location: string) => {
+    const result = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&${unit}`
+    );
+    const data = await result.json();
+    return filterResult(data);
+  };
+
+  const getWeatherCelsius = weatherGetterFactory("units=metric");
+
+  const getWeatherFarenheit = weatherGetterFactory("units=imperial");
+
   const render = (
     data: {
       clouds: number;
@@ -57,23 +69,7 @@ const Weather = (() => {
       </div>
     </div>`;
 
-  const getWeatherCelsius = async (location: string) => {
-    const result = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&units=metric`
-    );
-    const data = await result.json();
-    return filterResult(data);
-  };
-
-  const getWeatherFarenheit = async (location: string) => {
-    const result = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=99db9462bd58a911d124e10b8af800a9&units=imperial`
-    );
-    const data = await result.json();
-    return filterResult(data);
-  };
-
-  return { getWeatherCelsius, render, getWeatherFarenheit };
+  return { getWeatherCelsius, getWeatherFarenheit, render };
 })();
 
 export default Weather;
