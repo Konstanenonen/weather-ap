@@ -6,3 +6,5 @@
   the globe.
 </p>
 <br>
+
+### [Link to live site](https://konstanenonen.github.io/weather-app/)
